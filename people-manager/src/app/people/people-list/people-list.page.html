@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot='start'>
+      <ion-button [routerLink]="['/add-people']">
+      <ion-icon name="arrow-round-back"></ion-icon>
+      Add new
+      </ion-button>
+    </ion-buttons>
+    <ion-title>People Manager</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>List of People</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let person of people">
+                    {{ person }}
+              </ion-item>
+            </ion-list>
+            <div margin-vertical text-right>
+                <ion-button size="small" [routerLink]="['/add-people']">
+                  <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+                  Add new person
+                </ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
